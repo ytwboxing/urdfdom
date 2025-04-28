@@ -44,6 +44,7 @@ find_package(console_bridge REQUIRED)
 include_directories(SYSTEM ${console_bridge_INCLUDE_DIRS})
 link_directories(${console_bridge_LIBRARY_DIRS})
 
+set(CMAKE_PREFIX_PATH /usr)
 find_package(Boost REQUIRED system thread unit_test_framework)
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
@@ -83,7 +84,7 @@ if (NOT MSVC)
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig/ COMPONENT pkgconfig)
 endif()
 
-add_subdirectory(urdf_parser_py)
+# add_subdirectory(urdf_parser_py)
 
 message(STATUS "Configuration successful. Type make to compile urdfdom")
 
