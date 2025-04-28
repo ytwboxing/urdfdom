@@ -37,10 +37,10 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(TinyXML REQUIRED)
 include_directories(SYSTEM ${TinyXML_INCLUDE_DIRS})
 
-find_package(urdfdom_headers 0.4 REQUIRED)
+find_package(urdfdom_headers 1.0.5 REQUIRED)
 include_directories(SYSTEM ${urdfdom_headers_INCLUDE_DIRS})
 
-find_package(console_bridge 0.3 REQUIRED)
+find_package(console_bridge REQUIRED)
 include_directories(SYSTEM ${console_bridge_INCLUDE_DIRS})
 link_directories(${console_bridge_LIBRARY_DIRS})
 

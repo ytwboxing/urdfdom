@@ -42,6 +42,8 @@
 #include <algorithm>
 #include <tinyxml.h>
 #include <console_bridge/console.h>
+#include <boost/algorithm/string.hpp>
+
 
 namespace urdf{
 
