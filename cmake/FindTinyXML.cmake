@@ -42,16 +42,19 @@
 ##################################################################################################
 
 # Get package location hint from environment variable (if any)
-if(NOT TinyXML_ROOT_DIR AND DEFINED ENV{TinyXML_ROOT_DIR})
-  set(TinyXML_ROOT_DIR "$ENV{TinyXML_ROOT_DIR}" CACHE PATH
-      "TinyXML base directory location (optional, used for nonstandard installation paths)")
-endif()
+# if(NOT TinyXML_ROOT_DIR AND DEFINED ENV{TinyXML_ROOT_DIR})
+#   set(TinyXML_ROOT_DIR "$ENV{TinyXML_ROOT_DIR}" CACHE PATH
+#       "TinyXML base directory location (optional, used for nonstandard installation paths)")
+# endif()
 
-# Search path for nonstandard package locations
-if(TinyXML_ROOT_DIR)
-  set(TinyXML_INCLUDE_PATH PATHS "${TinyXML_ROOT_DIR}/include" NO_DEFAULT_PATH)
-  set(TinyXML_LIBRARY_PATH PATHS "${TinyXML_ROOT_DIR}/lib"     NO_DEFAULT_PATH)
-endif()
+# # Search path for nonstandard package locations
+# if(TinyXML_ROOT_DIR)
+#   set(TinyXML_INCLUDE_PATH PATHS "${TinyXML_ROOT_DIR}/include" NO_DEFAULT_PATH)
+#   set(TinyXML_LIBRARY_PATH PATHS "${TinyXML_ROOT_DIR}/lib"     NO_DEFAULT_PATH)
+# endif()
+
+set(TinyXML_INCLUDE_PATH PATHS "/usr/include/" NO_DEFAULT_PATH)
+set(TinyXML_LIBRARY_PATH PATHS "/usr/lib/x86_64-linux-gnu/"     NO_DEFAULT_PATH)
 
 # Find headers and libraries
 find_path(TinyXML_INCLUDE_DIR NAMES tinyxml.h PATH_SUFFIXES "tinyxml" ${TinyXML_INCLUDE_PATH})
